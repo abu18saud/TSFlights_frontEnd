@@ -7,3 +7,7 @@ This project for view
 # best set for any new project
 - https://t.me/CsharpAbdullahAlsalem/220
 
+# Making New Routes
+$ ng g c home
+$ ng generate component home
+
