@@ -11,3 +11,11 @@ This project for view
 $ ng g c home
 $ ng generate component home
 
+# Creating the Service
+$ ng g service flights
+
+# For Create a model
+$ ng generate class flight --type=model 
+-- https://www.codegrepper.com/code-examples/javascript/ng+generate+interface
+
+
