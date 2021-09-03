@@ -5,7 +5,7 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    background: url(../../TSFlightsApp/src/assets/Mountains.jpg);
+    background: url("https://tsflights-images.firebaseapp.com/mountains.jpeg"); 
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -23,14 +23,32 @@ header {
         height: 80px;
         width: 250px;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
+        background-position-y: center;
         margin: 10px 20px;
         align-self: flex-start;
+        @media screen and (max-width: 497px) {
+            width: 200px;
+            margin-left: 4px;
+            margin-top: 7px;
+        }
     }
+
     .link_box {
         height: 80px;
-        margin: 10px;
+        margin: 18px 10px;
         align-self: flex-end;
-        border: 1px dotted grey;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        button {
+            border-radius: 9px;
+            width: 100px;
+            height: 30px;
+            background-color: #415D65;
+            color: white;
+            text-align: center;
+        }
     }
 }
