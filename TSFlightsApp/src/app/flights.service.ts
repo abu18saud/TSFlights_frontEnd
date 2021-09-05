@@ -1,30 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Flight } from './flight.model';
-
+import { Observable } from 'rxjs';
+import { HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FlightsService {
 
-  flights: Flight[] = [
-    {
-      origin: "Miami", destination: 'Chicago', flightNumber: 345,
-      depart: new Date(1988, 3, 15),
-      arrive: new Date(1988, 3, 15), nonstop: true
-    },
-    {
-      origin: "New York", destination: 'Los Angeles', flightNumber: 432,
-      depart: new Date(1988, 3, 15),
-      arrive: new Date(1988, 3, 15), nonstop: false
-    }, //'2020-05-25T23:23:21.932Z'
-  ];
+  constructor(private http: HttpClient) { }
 
 
-  constructor() { }
-
-  getFlights() {
-    return this.flights;
+  getFlights(): Observable<any> {
+    return this.http.get('http://localhost:3000/flights/');
   }
 
   postFlight(flight: Flight) {
@@ -32,9 +20,7 @@ export class FlightsService {
   }
 
   deleteFlight(id: number) {
-
+    
   }
-
-
 
 }
