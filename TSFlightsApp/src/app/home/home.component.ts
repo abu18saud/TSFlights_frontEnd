@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+loading = true;
 
   flights: Flight[] = [];
   selectedOrigin: string = "";
@@ -26,10 +27,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.flightsService.getAllOrigins().subscribe(data =>{
       this.filteredOriginList = data;
+      this.loading = false;
     }); 
 
     this.flightsService.getAllDestinations().subscribe(data =>{
       this.filteredDestinationList = data;
+      this.loading = false;
+
     });
     /*     this.flightsService.getFlights().subscribe(data => {
           this.flights = data;

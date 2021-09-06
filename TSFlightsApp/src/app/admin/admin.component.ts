@@ -11,6 +11,7 @@ export class AdminComponent implements OnInit {
 
   constructor(private flightService: FlightsService) { }
 
+  loading = true;
 
   origin: string = "";
   destination: string = "";
@@ -38,29 +39,35 @@ export class AdminComponent implements OnInit {
       nonstop: this.nonstop
     }
     this.flightService.postFlight(flight);
+    this.refresh();
+
   }
 
-  update(flight:Flight){
-    this.flightService.updateFlight(flight).subscribe(data =>{
+  update(flight: Flight) {
+    this.flightService.updateFlight(flight).subscribe(data => {
       console.log('data is', data);
-      //if(data && data['affected']){
+      if (data) {
         this.refresh();
-      //}
+      }
     });
   }
 
 
-/*   delete(flight:Flight){
-    this.flightService.deleteFlight(flight.id).subscribe(data =>{
-      //if(data && data['affected']){
-        this.refresh();
-      //}
-    });
-  }  */
+  delete(flight: Flight) {
+    if (window.confirm('are you sure you want to delete this flight? ')) {
+      /// your delete method code 
+      this.flightService.deleteFlight(flight).subscribe(data => {
+        if (data) {
+          this.refresh();
+        }
+      });
+    }
+  }
 
   refresh() {
     this.flightService.getAllFlights().subscribe(data => {
       this.flightList = data;
+      this.loading = false;
     })
   }
 

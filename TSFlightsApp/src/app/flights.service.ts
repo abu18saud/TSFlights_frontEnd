@@ -31,11 +31,11 @@ export class FlightsService {
   }
 
   updateFlight(flight: Flight) {
-    return this.http.post(`${this.backEndURL}/flights/${flight.id}/update`,flight);
+    return this.http.post(`${this.backEndURL}/api/flights/${flight.id}/update`,flight);
   }
 
-  deleteFlight(id: number) {
-    return this.http.post(`${this.backEndURL}/flights/${id}/delete`, null);
+  deleteFlight(flight: Flight) {
+    return this.http.post(`${this.backEndURL}/api/flights/${flight.id}/delete`, null);
    } 
 
 

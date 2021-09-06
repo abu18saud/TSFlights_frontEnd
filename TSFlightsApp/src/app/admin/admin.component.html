@@ -13,6 +13,10 @@
     <button (click)="sendFlight()">create flight</button>
 </div>
 
+<div class="notice-panel" *ngIf="loading">
+    LOADING FLIGHTS, PLEASE WAIT
+</div>
+
 <div class="editPanel">
     <table class="flightTable">
         <tr>
@@ -33,8 +37,8 @@
             <td>{{flight.arrive | date : 'shortDate'}}</td>
             <td>{{flight.nonstop}}</td>
             <td><button class="update" (click)="update(flight)">go</button></td>
-            <td><button class="delete">go</button></td>
-            <!--(click)="delete(flight)"-->
+            <td>
+                <button class="delete" (click)="delete(flight)">go</button></td>
         </tr>
     </table>
 </div>
