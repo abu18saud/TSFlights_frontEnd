@@ -41,3 +41,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Install jQuery
 - npm install jquery
 
+## Create Model Class
+- ng g cl book --type=model
+
+## Create a Service
+- ng g s book
+
