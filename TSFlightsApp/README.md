@@ -17,6 +17,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## To Fix with new device
 npm install
 
+- has no initializer and is not definitely assigned in the constructor
+$ https://stackoverflow.com/questions/49699067/property-has-no-initializer-and-is-not-definitely-assigned-in-the-construc
+
+
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
