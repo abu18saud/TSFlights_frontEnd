@@ -64,3 +64,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Create Component with muli-moudule
 - ng generate component componentName --module=app.module
+
+## Setup Angular Material
+- ng add @angular/material
+
+
