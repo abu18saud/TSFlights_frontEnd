@@ -68,4 +68,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Setup Angular Material
 - ng add @angular/material
 
+## More than one module matches.
+- ng g c new-component --module app
+
 
